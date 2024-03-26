@@ -13,10 +13,12 @@ gem "cssbundling-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
 gem "devise"
+gem "faraday"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry-byebug"
+  gem "dotenv"
 end
 
 group :development do

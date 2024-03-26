@@ -1,0 +1,6 @@
+ <div class="flex flex-row">
+  <div>
+    <figure><img src="<%= movie[:Poster]%>" alt="Poster" /></figure>
+  </div>
+  <div class="basis-1/4"><%= render collection: movie.keys, partial: "movies/kv", locals: { movie: movie } %></div>
+</div>

@@ -20,8 +20,9 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
       <% if current_user %>
+      <li><%= link_to "Search", search_path %></li>
+      <li><%= link_to "My movies", movies_path %></li>
       <li>
         <details>
           <summary><%= current_user.email %></summary>
@@ -30,7 +31,6 @@
           </ul>
         </details>
       </li>
-      <li><%= link_to "My movies", movies_path %></li>
       <% else %>
         <li><%= link_to "Sign up", new_user_registration_path %></li>
         <li><%= link_to "Sign in", new_user_session_path %></li>
