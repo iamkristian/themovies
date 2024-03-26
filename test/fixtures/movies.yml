@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  poster: MyString
+  user: one
+  omdb_id: MyString
+
+two:
+  title: MyString
+  poster: MyString
+  user: two
+  omdb_id: MyString
