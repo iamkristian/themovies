@@ -11,3 +11,7 @@ Clone the repos and install with ``` bundle install ```
 Remember to create a ``` .env ``` file with the ``` OMDB_API_KEY=<your api key> ``` inside.
 
 Run ``` rake db:migrate ``` and spin it up with ``` ./bin/dev ```
+
+## Running the system test
+
+Run the system test with ``` ./bin/rails test:system ```

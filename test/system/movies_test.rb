@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class MoviesTest < ApplicationSystemTestCase
   setup do
+    @user = users(:one)
+    sign_in @user
     @movie = movies(:one)
   end
 
@@ -14,7 +16,7 @@ class MoviesTest < ApplicationSystemTestCase
     visit movies_url
     click_on "New movie"
 
-    fill_in "Omdb", with: @movie.omdb_id
+    fill_in "Imdb", with: @movie.imdb_id
     fill_in "Poster", with: @movie.poster
     fill_in "Title", with: @movie.title
     fill_in "User", with: @movie.user_id
@@ -28,7 +30,7 @@ class MoviesTest < ApplicationSystemTestCase
     visit movie_url(@movie)
     click_on "Edit this movie", match: :first
 
-    fill_in "Omdb", with: @movie.omdb_id
+    fill_in "Imdb", with: @movie.imdb_id
     fill_in "Poster", with: @movie.poster
     fill_in "Title", with: @movie.title
     fill_in "User", with: @movie.user_id
