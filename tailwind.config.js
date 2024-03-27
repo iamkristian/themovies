@@ -1,5 +1,3 @@
-const tailwind_theme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   content: [
     './app/views/**/*.html.erb',
@@ -9,9 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Poppins', ...tailwind_theme.fontFamily.sans],
-      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100ch', // add required value here
+          }
+        }
+      }
     },
   },
   plugins: [require('@tailwindcss/typography'), require("daisyui")],

@@ -1,6 +1,19 @@
- <div class="flex flex-row">
-  <div>
-    <figure><img src="<%= movie[:Poster]%>" alt="Poster" /></figure>
+<div class="flex flex-row gap-4 w-2/3 mx-auto">
+  <div class="flex-none">
+    <img class="m-0" src="<%= movie[:Poster]%>" alt="Poster" />
   </div>
-  <div class="basis-1/4"><%= render collection: movie.keys, partial: "movies/kv", locals: { movie: movie } %></div>
+  <div>
+    <%= render collection: include_keys(movie.keys, [:title, :plot, :actors]), partial: "movies/kv", locals: { movie: movie } %>
+    <%= form_with(model: new_movie) do |f| %>
+      <%= f.hidden_field :title, value: movie[:Title] %>
+      <%= f.hidden_field :poster, value: movie[:Poster] %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :imdb_id, value: movie[:imdbID] %>
+
+      <div>
+        <%= f.submit "Add movie to collection", class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
