@@ -1,3 +1,4 @@
+require 'omdb'
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
@@ -8,6 +9,8 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
+    omdb = Omdb.new
+    @resp = omdb.find_by_id(@movie.imdb_id)
   end
 
   # GET /movies/new

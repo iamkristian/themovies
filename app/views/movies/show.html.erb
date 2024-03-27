@@ -1,6 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @movie %>
+
+<%= render collection: reject_keys(@resp.keys, [:poster, :ratings]), partial: "movies/kv", locals: { movie: @resp } %>
 
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |

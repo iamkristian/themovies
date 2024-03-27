@@ -13,6 +13,11 @@ class Omdb
     JSON.parse(resp.body).with_indifferent_access
   end
 
+  def find_by_id(query)
+    resp = conn.get '', { i: query, apikey: api_key }
+    JSON.parse(resp.body).with_indifferent_access
+  end
+
   private
 
   def api_key

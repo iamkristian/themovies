@@ -1,24 +1,13 @@
-# README
+# The movies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prequisites
 
-Things you may want to cover:
+Make sure you have [bun](https://bun.sh/), and Postgresql installed.
 
-* Ruby version
+## Getting started
 
-* System dependencies
+Clone the repos and install with ``` bundle install ```
 
-* Configuration
+Remember to create a ``` .env ``` file with the ``` OMDB_API_KEY=<your api key> ``` inside.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run ``` rake db:migrate ``` and spin it up with ``` ./bin/dev ```
